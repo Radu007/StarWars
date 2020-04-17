@@ -1,5 +1,6 @@
 body {
 	background: #070506 url('../img/main-bg.png') center center/cover no-repeat;
+	background-attachment: fixed;
 		font-family: 'Roboto',sans-serif;
 }
 
@@ -90,6 +91,7 @@ body {
 }
 
 .button__play {
+	display: inline-block;
 	background: linear-gradient(90deg, #FB641A 0%, #FC3309 100%);
 	border-radius: 300px;
 	padding: 25px 87px 25px 34px;
@@ -100,6 +102,7 @@ body {
 	text-transform: uppercase;
 	color: #FFFFFF;
 	margin-top: 54px;	
+	text-decoration: none;
 }
 
 .button__play::after {
@@ -128,6 +131,7 @@ body {
 
 .episodes {
 	color: #fff;
+	padding: 60px 0;
 }
 
 .slider {
@@ -136,7 +140,9 @@ body {
 }
 
 .slider__item {
+	position: relative;
 	display: flex;
+	overflow: hidden;
 	flex-direction: column;
 	justify-content: space-between;
 	width: 250px;
@@ -152,4 +158,49 @@ body {
 .slider__item:hover {
 	background: linear-gradient(0deg, rgba(64, 101, 255, 0.86), rgba(64, 101, 255, 0.86));
 	box-shadow: 0px 10px 26px rgba(0, 0, 0, 0.25);
+}
+
+
+.slider__image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.slider__rating-label {
+	margin-right: 12px;
+}
+
+.star {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background: url('../img/star.svg') no-repeat center;
+}
+
+.star-o {
+	background: url('../img/star-o.svg') no-repeat center;
+}
+
+.slider__nav--left {
+	width: 32px;
+	height: 32px;
+	background: transparent url('../img/left-arrow.svg') no-repeat center;
+	border:none;
+
+
+}
+
+.slider__nav--right {
+	width: 32px;
+	height: 32px;
+	background: transparent url('../img/right-arrow.svg') no-repeat center;
+	border:none;
+	margin-left: 15.51px;
+}
+
+.slider__nav--left span,
+.slider__nav--right span {
+	display: none;
 }
